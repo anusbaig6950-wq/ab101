@@ -1,6 +1,7 @@
 
 
-{% for block in section.blocks %}
+<div style="text-align: {{ section.settings.text_alignment }};">
+    {% for block in section.blocks %}
    {%- case block.type -%}
     {%- when 'title' -%}
         <h2 style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.font_color }};">TITLE</h2>
@@ -10,11 +11,34 @@
     
 
 {% endfor %}
+</div>
 
 {% schema %}
     {
         "name": "hello world",
         "settings": [
+            
+                {
+                  "type": "select",
+                  "id": "text_alignment",
+                  "label": "Text Alignment",
+                  "options": [
+                    {
+                      "value": "left",
+                      "label": "Left"
+                    },
+                    {
+                      "value": "center",
+                      "label": "Center"
+                    },
+                    {
+                      "value": "right",
+                      "label": "Right"
+                    }
+                  ],
+                  "default": "left"
+                },
+            
      ],
                 "blocks": [
                   {
