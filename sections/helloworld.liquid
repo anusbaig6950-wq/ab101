@@ -1,4 +1,10 @@
-<h1>{{ section.settings.title }}</h1>
+{% style %}
+    .hello-world {
+        background-color: {{ section.settings.bg_color }};
+    }
+{% endstyle %}
+
+<h1 class="hello-world">{{ section.settings.title }}</h1>
 
 {% schema %}
     {
@@ -11,6 +17,12 @@
             "default": "hellow world",
        
         },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "background color",
+            "default": "#ffffff"
+        }
         ],
         "presets": [
             {
@@ -20,3 +32,4 @@
         ]
     }
 {% endschema %}
+ 
