@@ -1,11 +1,9 @@
-{% style %}
-    .hello-world {
-        background-color: {{ section.settings.bg_color }};
-        color: {{ section.settings.font_color }};
-    }
-{% endstyle %}
 
-<h1 class="hello-world">{{ section.settings.title }}</h1>
+
+{% for block in section.blocks %}
+    <h3>{{block.type}}</h3>
+    
+{% endfor %}
 
 {% schema %}
     {
@@ -33,6 +31,29 @@
             },
         
         ],
+                "blocks": [
+                  {
+                    "name": "title",
+                    "type": "title",
+                    "settings": [
+                       {
+            "type": "color",
+            "id": "bg_color",
+            "label": "background color",
+            "default": "#ffffff"
+        },
+        
+            {
+              "type": "color",
+              "id": "font_color",
+              "label": "font color",
+              "default": "#000000"
+            },
+                    ]
+                  }
+                ],
+
+        
         "presets": [
             {
                 "name": "hello world",
