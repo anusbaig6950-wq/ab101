@@ -1,14 +1,8 @@
 
 
 {% for block in section.blocks %}
-   {%- case block.type -%}
-    {%- when title -%}
-        <h2>TITLE</h2>
-    {%- when subtitle -%}
-        <h5>subtitle</h5>
-    {%- endcase -%}
+    <h3>{{block.type}}</h3>
     
-
 {% endfor %}
 
 {% schema %}
@@ -16,7 +10,27 @@
         "name": "hello world",
         "settings": [
             
+        {
+            "type": "textarea",
+            "id": "title",
+            "label": "title",
+            "default": "hellow world",
        
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "background color",
+            "default": "#ffffff"
+        },
+        
+            {
+              "type": "color",
+              "id": "font_color",
+              "label": "font color",
+              "default": "#000000"
+            },
+        
         ],
                 "blocks": [
                   {
