@@ -1,17 +1,22 @@
-<h1>hello world</h1>
+<h1>{{ section.settings.title }}</h1>
 
 {% schema %}
     {
         "name": "hello world",
         "settings": [
-        
+        {
+            "type": "textarea",
+            "id": "title",
+            "label": "title",
+            "default": "hellow world",
+       
+        },
         ],
         "presets": [
             {
                 "name": "hello world",
-                "category": "Custom"
+                
             }
         ]
     }
 {% endschema %}
- 
