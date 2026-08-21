@@ -1,6 +1,7 @@
 {% style %}
     .hello-world {
         background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.font_color }};
     }
 {% endstyle %}
 
@@ -22,7 +23,15 @@
             "id": "bg_color",
             "label": "background color",
             "default": "#ffffff"
-        }
+        },
+        
+            {
+              "type": "color",
+              "id": "font_color",
+              "label": "font color",
+              "default": "#000000"
+            },
+        
         ],
         "presets": [
             {
